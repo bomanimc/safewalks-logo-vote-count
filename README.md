@@ -7,7 +7,7 @@ This approach uses a free Chrome extension called [Web Scraper](https://chrome.g
 This program is not meant to be comprehensive, 'clean', or optimally efficient. Any contributions to improve this tool/workflow by members of the Safewalks team are welcome (as PRs, forks, rewrites, etc)!
 
 ## Usage
-- Download the [Web Scraper Chrome Exension](https://chrome.google.com/webstore/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn/related?hl=en).
+- Download the [Web Scraper Chrome Extension](https://chrome.google.com/webstore/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn/related?hl=en).
 - Open Chrome DevTools.
 - Go to the 'Web Scraper' tab.
 - Click "Create new Sitemap" and select the "Import Sitemap" option.
