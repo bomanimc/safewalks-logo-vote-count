@@ -1,12 +1,15 @@
 const fs = require('fs'); 
 const parse = require('csv-parse');
 
+const dataPathArg = process.argv[2];
+const matchNumbersRegex = /\d+/g;
+
 const parser = parse({columns: true}, (err, records) => {
   const voteCounts = {};
 
   records.forEach(record => {
     const {getcomments: comment} = record;
-    const numbersInComment = comment.match(/\d+/g);
+    const numbersInComment = comment.match(matchNumbersRegex);
 
     if (!numbersInComment) return;
 
@@ -19,7 +22,8 @@ const parser = parse({columns: true}, (err, records) => {
     });
   })
 
+  console.log("The results of this poll are: \n");
 	console.log(voteCounts);
 });
 
-fs.createReadStream(__dirname+'/data/example_data.csv').pipe(parser);
+fs.createReadStream(dataPathArg).pipe(parser);
