@@ -2,11 +2,21 @@
 
 This repository contains a simple proof-of-concept approach for counting votes for Safewalks logo designs that have been submitted as comments on the Safewalks Instagram account. [See an example of the public logo selection polls here](https://www.instagram.com/p/CNoSB5ZDGfI/).
 
-This approach uses a free Chrome extension called [Web Scraper](https://chrome.google.com/webstore/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn/related?hl=en) to scrape comments from a given post on Instagram. Afterward, the scraped data is downloaded as a CSV. The CSV is then processed by a simple Node.js script that uses a regular expression to pull numbers from each comment and counts their frequencies to determine the final voting results. 
+### Console Script Approach (Somewhat tedious but more thorough)
+This approach uses a simple button click triggered in your browsers JS console to repeatedly click the comment pagination button. Once the process is done, you can run a script in the browser to gather the results.
 
-This program is not meant to be comprehensive, 'clean', or optimally efficient. Any contributions to improve this tool/workflow by members of the Safewalks team are welcome (as PRs, forks, rewrites, etc)!
+### Chrome Extensions Approach (Convenient but less thorough)
+This approach uses a free Chrome extension called [Web Scraper](https://chrome.google.com/webstore/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn/related?hl=en) to scrape comments from a given post on Instagram. Afterward, the scraped data is downloaded as a CSV. The CSV is then processed by a simple Node.js script that uses a regular expression to pull numbers from each comment and counts their frequencies to determine the final voting results. 
+ 
+---
+
+Neither program is not meant to be comprehensive, 'clean', or optimally efficient. Any contributions to improve this tool/workflow by members of the Safewalks team are welcome (as PRs, forks, rewrites, etc)!
 
 ## Usage
+### Console Scripting Approach
+See instructions in `script.js`.
+
+### Chrome Extension Approach
 - Download the [Web Scraper Chrome Extension](https://chrome.google.com/webstore/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn/related?hl=en).
 - Open Chrome DevTools.
 - Go to the 'Web Scraper' tab.
@@ -48,6 +58,9 @@ If people continue to follow the voting instructions, we can expect that a major
 
 ### Account risk due to Instagram bot detection
 Collecting an accurate vote count requires clicking buttons to paginate through all of the comments on a given post, which requires a lot of consecutive pagination requests to load new comments from Instagram's GraphQL API. The logged-in user who runs this scraper may put their account at risk for being flagged as a bot by Instagram, which could potentially result in a banning of the account.
+
+### Chrome Extension does not collect all comments
+I've noticed that the Web Scraper does not collect all the comments on the post. Though most comments are typically collected, it may miss a few votes.
 
 ## Next Steps
 If we decide to continue working on this project, here are a few ideas for improvements to this tool.
