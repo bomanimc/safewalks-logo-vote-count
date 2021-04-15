@@ -1,6 +1,6 @@
 # Automated Vote Counting for the Safewalks Logo
 
-This repository contains a simple proof-of-concept approach for counting votes for Safewalks logo designs that have been submitted as comments on the Safewalks Instagram account. See an example of the public logo selection polls here.
+This repository contains a simple proof-of-concept approach for counting votes for Safewalks logo designs that have been submitted as comments on the Safewalks Instagram account. [See an example of the public logo selection polls here](https://www.instagram.com/p/CNoSB5ZDGfI/).
 
 This approach uses a free Chrome extension called [Web Scraper](https://chrome.google.com/webstore/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn/related?hl=en) to scrape comments from a given post on Instagram. Afterward, the scraped data is downloaded as a CSV. The CSV is then processed by a simple Node.js script that uses a regular expression to pull numbers from each comment and counts their frequencies to determine the final voting results. 
 
